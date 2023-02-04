@@ -1,0 +1,182 @@
+<Schema>
+    <element name="YelpGym">
+        <complexType>
+        <!--YelpGym-->
+            <element name="Visitor" maxOccurs="unbounded">
+                <complexType>
+                    <element name="location" use="optional"/>
+                    <attribute name="Browser_Engine" type="string" use="optional"/>
+                </complexType>
+            </element>
+
+            <element name="User" maxOccurs="unbounded">
+                <!--User-->
+                <complexType>
+                    <element name="userName" use="required">
+                        <simpleType>
+                            <restriction base="String">
+                                <pattern value="[a-zA-Z]"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="userAge" use="optional">
+                        <simpleType>
+                            <restriction base="number">
+                                <pattern value="^[0-9]"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="userReigon" use="optional"/>
+                    <element name="userAddress" use="optional"/>
+                    <element name="userEmail" use="required">
+                        <simpleType>
+                            <restriction base="String">
+                                <pattern value="/^\S+@\S+\.\S+$/"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="userCredintials"/>
+                    <element name="userReview" use="optional">
+                        <complexType>
+                            <element name="gymID"/>
+                            <element name="comment"/>
+                            <element name="rating"/>
+                        </complexType>
+                    </element>
+                    <element name="userLocation" use="optional"/>
+
+                    <attribute name="Browser_Engine" type="string" use="optional"/>
+                    <attribute name="userID" type="string" use="required"/>
+                    <attribute name="gender" type="string" use="optional"/>
+                    <attribute name="weight" type="string" use="optional"/>
+                    <attribute name="subscribed_Gym" type="string" use="optional"/>
+                    <attribute name="perferred_Language" type="string" use="optional"/>
+                    <attribute name="perferred_Language" type="string" use="optional"/>
+                </complexType>
+            </element>
+
+            <element name="Owner" maxOccurs="unbounded">
+                <!--Owner-->
+                <complexType>
+                    <element name="ownerName" use="required"/>
+                    <element name="registeredGym" use="required"/>
+                    <element name="contactNumber" use="required">
+                        <simpleType>
+                            <restriction base="String">
+                                <pattern value="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="email">
+                        <simpleType>
+                            <restriction base="String">
+                                <pattern value="/^\S+@\S+\.\S+$/"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="ownerCredintials"/>
+                    <attribute name="ownerID" type="string" use="required"/>
+
+                    <attribute name="Browser_Engine" type="string" use="optional"/>
+                    <attribute name="userID" type="string" use="required"/>
+                    <attribute name="gender" type="string" use="optional"/>
+                    <attribute name="perferred_Language" type="string" use="optional"/>
+                    <attribute name="isPlusUser" type="string" use="optional"/>
+                </complexType>
+            </element>
+
+            <element name="Admin">
+                <!--Admin-->
+                <comxplxType>
+                    <element name="admiName" use="optional"/>
+                    <element name="adminEmail" use="optional">
+                        <simpleType>
+                            <restriction base="String">
+                                <pattern value="/^\S+@\S+\.\S+$/"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                </comxplxType>
+            </element>
+
+            <element name="Gym" maxOccurs="unbounded">
+                <!--Gym-->
+                <complexType>
+                    <element name="gymName" use="required"/>
+                    <element name="gymAddress" use="required"/>
+                    <element name="gymLocationURL" use="required"/>
+                    <element name="gymSocials" use="optional">
+                        <simpleType>
+                            <restrition abse="string">
+                                <enumeration value="Facebook"/>
+                                <enumeration value="Twitter"/>
+                                <enumeration value="Instgram"/>
+                            </restrition>
+                        </simpleType>
+                    </element>
+                    <element name="gymWebsite" use="optional"/>
+                    <element name="gymWokringHours" use="required">
+                        <simpleType>
+                            <restrition abse="String">
+                                <enumeration value="Sunday"/>
+                                <enumeration value="Monday"/>
+                                <enumeration value="Tuesday"/>
+                                <enumeration value="Wednesday"/>
+                                <enumeration value="Thursday"/>
+                                <enumeration value="Friday"/>
+                            </restrition>
+                        </simpleType>
+                        <simpleType>
+                            <restriction base="Number">
+                                <pattern vaule="^[0-2][0-3]:[0-5][0-9]$"/>
+                            </restriction>
+                        </simpleType>
+                        <simpleType>
+                            <restrition abse="String">
+                                <enumeration value="PM"/>
+                                <enumeration value="AM"/>
+                            </restrition>
+                        </simpleType>
+                    </element>
+                    <element name="gymCrowdedness" use="required">
+                        <simpleType>
+                            <!--crowdedness out of 9-->
+                            <restriction base="Number">
+                                <pattern vaule="[1-10]"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                    <element name="gymFacilities" use="optional">
+                        <simpleType>
+                            <restrition abse="string">
+                                <enumeration value="Changing Rooms"/>
+                                <enumeration value="Kickboxing Zone"/>
+                                <enumeration value="Lockers"/>
+                                <enumeration value="Lounge Area"/>
+                                <enumeration value="Strength Area"/>
+                                <enumeration value="Play Ground"/>
+                                <enumeration value="Cycling Studio"/>
+                            </restrition>
+                        </simpleType>
+                    </element>
+                    <element name="subcriptionPrice" use="optional">
+                        <simpleType>
+                            <simpleType>
+                                <restrition abse="string">
+                                    <enumeration value="1500 for 1 Month"/>
+                                    <enumeration value="4000 for 3 Months"/>
+                                    <enumeration value="15000 for 1 Year"/>
+                                </restrition>
+                            </simpleType>
+                        </simpleType>
+                    </element>
+                    <attribute name="gymID" type="string" use="required"/>
+                    <attribute name="hasBranches" type="string" use="optional"/>
+                    <attribute name="localToOneCity" type="string" use="required"/>
+                    <attribute name="forBothGenders" type="string" use="required"/>
+                    <attribute name="acceptsSTCPay" type="string" use="required"/>
+                </complexType>
+            </element>
+        </complexType>
+    </element>
+</Schema>
