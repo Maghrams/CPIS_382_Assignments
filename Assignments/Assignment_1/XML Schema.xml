@@ -77,7 +77,7 @@
                     <element name="ownerCredintials"/>
                     <attribute name="ownerID" type="string" use="required"/>
 
-                    <attribute name="Browser_Engine" type="string" use="optional"/>
+                    <attribute name="User_Agent" type="string" use="optional"/>
                     <attribute name="userID" type="string" use="required"/>
                     <attribute name="gender" type="string" use="optional"/>
                     <attribute name="perferred_Language" type="string" use="optional"/>
