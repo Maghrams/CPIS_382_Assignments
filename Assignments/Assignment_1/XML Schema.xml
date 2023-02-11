@@ -5,7 +5,7 @@
             <element name="Visitor" maxOccurs="unbounded">
                 <complexType>
                     <element name="location" use="optional"/>
-                    <attribute name="Browser_Engine" type="string" use="optional"/>
+                    <attribute name="User_Agent" type="string" use="optional"/>
                 </complexType>
             </element>
 
@@ -45,7 +45,7 @@
                     </element>
                     <element name="userLocation" use="optional"/>
 
-                    <attribute name="Browser_Engine" type="string" use="optional"/>
+                    <attribute name="User_Agent" type="string" use="optional"/>
                     <attribute name="userID" type="string" use="required"/>
                     <attribute name="gender" type="string" use="optional"/>
                     <attribute name="weight" type="string" use="optional"/>
